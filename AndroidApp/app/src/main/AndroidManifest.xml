@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- 連線：WifiNetworkSpecifier + UDP（不影響行動數據） -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <!-- WIFI_MODE_FULL_LOW_LATENCY WifiLock -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- API 33+：連線到附近 Wi-Fi 裝置（不用於定位） -->
+    <uses-permission
+        android:name="android.permission.NEARBY_WIFI_DEVICES"
+        android:usesPermissionFlags="neverForLocation"
+        tools:targetApi="33" />
+    <!-- API 29..32：系統要求位置權限才能連 Wi-Fi 裝置（API 31+ 須同時請求 COARSE） -->
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
+        android:maxSdkVersion="32" />
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION"
+        android:maxSdkVersion="32" />
+    <!-- QR 掃描、觸覺回饋 -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-feature android:name="android.hardware.wifi" android:required="true" />
+    <uses-feature android:name="android.hardware.camera.any" android:required="false" />
+
+    <application
+        android:name=".B570Application"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.B570Pilot"
+        tools:targetApi="35">
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:screenOrientation="sensorLandscape"
+            android:configChanges="orientation|screenSize|screenLayout|smallestScreenSize|keyboard|keyboardHidden|navigation"
+            android:windowSoftInputMode="adjustResize"
+            android:theme="@style/Theme.B570Pilot"
+            tools:ignore="DiscouragedApi">
+            <!--
+              遙控器介面只有橫向（左右兩個橫向都可，跟著感測器翻轉）。
+              configChanges：左右翻轉、分割畫面調整大小、折疊機展開、接實體鍵盤時不重建 Activity，
+              Compose 直接重新排版（連線、搖桿手勢不中斷）。其他設定變更（深色模式、字體大小、語言）
+              仍會重建，狀態都在 ViewModel / CarRepository，重建也不會斷線。
+              launchMode singleTop：App 開著時點桌面捷徑（連線 <車名> / 掃描配對）走 onNewIntent，不會疊第二個畫面。
+              捷徑是動態捷徑（data/Shortcuts.kt，跟著記住的車更新），不需要 res/xml/shortcuts.xml。
+            -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

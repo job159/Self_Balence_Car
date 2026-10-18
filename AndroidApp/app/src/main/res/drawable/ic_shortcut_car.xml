@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 桌面捷徑「連線 <車名>」：深色圓底 + 青色平衡車（與 App 圖示同一個造型） -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="#FF0B1220"
+        android:strokeColor="#6622D3EE"
+        android:strokeWidth="1.5"
+        android:pathData="M24,2.75a21.25,21.25 0,1 1,0 42.5a21.25,21.25 0,1 1,0 -42.5z" />
+    <!-- 左右輪 -->
+    <path
+        android:fillColor="#FFB4C3DC"
+        android:pathData="M14.5,23.5a2.5,2.5 0,0 1,2.5 2.5v10a2.5,2.5 0,0 1,-5 0v-10a2.5,2.5 0,0 1,2.5 -2.5z" />
+    <path
+        android:fillColor="#FFB4C3DC"
+        android:pathData="M33.5,23.5a2.5,2.5 0,0 1,2.5 2.5v10a2.5,2.5 0,0 1,-5 0v-10a2.5,2.5 0,0 1,2.5 -2.5z" />
+    <!-- 車身 -->
+    <path
+        android:fillColor="#FF101A2E"
+        android:strokeColor="#FF22D3EE"
+        android:strokeWidth="1.6"
+        android:pathData="M21.5,11h5a3,3 0,0 1,3 3v19a3,3 0,0 1,-3 3h-5a3,3 0,0 1,-3 -3v-19a3,3 0,0 1,3 -3z" />
+    <!-- OLED -->
+    <path
+        android:fillColor="#FF22D3EE"
+        android:pathData="M21.6,14.5h4.8a0.9,0.9 0,0 1,0.9 0.9v2.6a0.9,0.9 0,0 1,-0.9 0.9h-4.8a0.9,0.9 0,0 1,-0.9 -0.9v-2.6a0.9,0.9 0,0 1,0.9 -0.9z" />
+    <path
+        android:strokeColor="#9922D3EE"
+        android:strokeWidth="1"
+        android:strokeLineCap="round"
+        android:pathData="M21.5,24h5M21.5,27h3" />
+</vector>

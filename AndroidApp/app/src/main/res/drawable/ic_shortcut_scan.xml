@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 桌面捷徑「掃描配對」：深色圓底 + 取景框 + QR 方塊 + 掃描線 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="48dp"
+    android:height="48dp"
+    android:viewportWidth="48"
+    android:viewportHeight="48">
+    <path
+        android:fillColor="#FF0B1220"
+        android:strokeColor="#668B5CF6"
+        android:strokeWidth="1.5"
+        android:pathData="M24,2.75a21.25,21.25 0,1 1,0 42.5a21.25,21.25 0,1 1,0 -42.5z" />
+    <!-- 取景框四角 -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF22D3EE"
+        android:strokeWidth="2.2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M13,19v-6h6M29,13h6v6M35,29v6h-6M19,35h-6v-6" />
+    <!-- QR 方塊 -->
+    <path
+        android:fillColor="#FFE6EDF7"
+        android:pathData="M17.5,17.5h5v5h-5zM25.5,17.5h5v5h-5zM17.5,25.5h5v5h-5zM25.5,25.5h2.5v2.5h-2.5zM28,28h2.5v2.5h-2.5z" />
+    <!-- 掃描線 -->
+    <path
+        android:strokeColor="#CC8B5CF6"
+        android:strokeWidth="1.4"
+        android:strokeLineCap="round"
+        android:pathData="M12,24h24" />
+</vector>

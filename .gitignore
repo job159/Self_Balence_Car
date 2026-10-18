@@ -1,0 +1,48 @@
+# ===== 個人設定（含密碼，絕不上傳）=====
+# 內建手機熱點的名稱 / 密碼：複製 b570_preset_local.example.h 成這個檔案再填
+ESP01/B570_Bridge/b570_preset_local.h
+
+# ===== STM32CubeIDE 編譯輸出 =====
+/Debug/
+/Release/
+*.o
+*.d
+*.su
+*.cyclo
+*.elf
+*.hex
+*.map
+*.list
+.metadata/
+
+# ===== ESP-01（Arduino / arduino-cli）=====
+ESP01/**/build/
+*.ino.bin
+
+# ===== Android App =====
+AndroidApp/.gradle/
+AndroidApp/.kotlin/
+AndroidApp/build/
+AndroidApp/app/build/
+AndroidApp/captures/
+AndroidApp/.idea/
+AndroidApp/local.properties
+*.iml
+*.apk
+*.aab
+*.jks
+*.keystore
+
+# ===== 主機端測試產物（tools/）=====
+tools/**/*.exe
+tools/esp_host_test/fuzz_cases.txt
+tools/esp_host_test/sta_cases.txt
+__pycache__/
+*.pyc
+
+# ===== 編輯器 / 系統 =====
+/.vscode/
+/.sixth/
+Thumbs.db
+Desktop.ini
+.DS_Store

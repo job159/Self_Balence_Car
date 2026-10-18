@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 只有深色主題；畫面由 Compose 繪製，這裡只避免啟動白閃 -->
+    <style name="Theme.B570Pilot" parent="android:Theme.Material.NoActionBar">
+        <item name="android:windowBackground">@color/b570_bg</item>
+        <item name="android:colorBackground">@color/b570_bg</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:windowLightNavigationBar">false</item>
+    </style>
+</resources>
